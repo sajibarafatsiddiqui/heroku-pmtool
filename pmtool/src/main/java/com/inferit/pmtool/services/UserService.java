@@ -1,9 +1,9 @@
-package com.inferit.projectmanagementtool.services;
+package com.inferit.pmtool.services;
 
 
-import com.inferit.projectmanagementtool.domain.User;
-import com.inferit.projectmanagementtool.exceptions.UsernameNotUniqueException;
-import com.inferit.projectmanagementtool.repositories.UserRepositories;
+import com.inferit.pmtool.domain.User;
+import com.inferit.pmtool.exceptions.UsernameNotUniqueException;
+import com.inferit.pmtool.repositories.UserRepositories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

@@ -1,5 +1,5 @@
-package com.inferit.projectmanagementtool.security;
-import com.inferit.projectmanagementtool.domain.User;
+package com.inferit.pmtool.security;
+import com.inferit.pmtool.domain.User;
 import io.jsonwebtoken.*;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
@@ -8,8 +8,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.inferit.projectmanagementtool.security.SecurityConstants.SECURITY;
-import static com.inferit.projectmanagementtool.security.SecurityConstants.TOKEN_SESSION;
+import static com.inferit.pmtool.security.SecurityConstants.SECURITY;
+import static com.inferit.pmtool.security.SecurityConstants.TOKEN_SESSION;
 @Component
 public class JsonTokenProvider {
     //Generate Token

@@ -1,4 +1,4 @@
-package com.inferit.projectmanagementtool.exceptions;
+package com.inferit.pmtool.exceptions;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;

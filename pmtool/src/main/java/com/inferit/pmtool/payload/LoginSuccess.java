@@ -1,4 +1,4 @@
-package com.inferit.projectmanagementtool.payload;
+package com.inferit.pmtool.payload;
 
 import lombok.Data;
 @Data

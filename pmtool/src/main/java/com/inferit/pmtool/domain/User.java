@@ -1,4 +1,4 @@
-package com.inferit.projectmanagementtool.domain;
+package com.inferit.pmtool.domain;
 
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;

@@ -1,12 +1,12 @@
-package com.inferit.projectmanagementtool.services;
+package com.inferit.pmtool.services;
 
-import com.inferit.projectmanagementtool.domain.BackLog;
-import com.inferit.projectmanagementtool.domain.Project;
-import com.inferit.projectmanagementtool.domain.User;
-import com.inferit.projectmanagementtool.exceptions.ProjectIdException;
-import com.inferit.projectmanagementtool.repositories.BackLogRepositories;
-import com.inferit.projectmanagementtool.repositories.ProjectRepositories;
-import com.inferit.projectmanagementtool.repositories.UserRepositories;
+import com.inferit.pmtool.domain.BackLog;
+import com.inferit.pmtool.domain.Project;
+import com.inferit.pmtool.domain.User;
+import com.inferit.pmtool.exceptions.ProjectIdException;
+import com.inferit.pmtool.repositories.BackLogRepositories;
+import com.inferit.pmtool.repositories.ProjectRepositories;
+import com.inferit.pmtool.repositories.UserRepositories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;

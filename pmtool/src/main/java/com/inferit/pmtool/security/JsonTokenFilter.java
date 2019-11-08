@@ -1,7 +1,7 @@
-package com.inferit.projectmanagementtool.security;
+package com.inferit.pmtool.security;
 
-import com.inferit.projectmanagementtool.domain.User;
-import com.inferit.projectmanagementtool.services.CustomUserDetailsService;
+import com.inferit.pmtool.domain.User;
+import com.inferit.pmtool.services.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Collections;
 
-import static com.inferit.projectmanagementtool.security.SecurityConstants.HEADER;
-import static com.inferit.projectmanagementtool.security.SecurityConstants.JWT_PREFIX;
+import static com.inferit.pmtool.security.SecurityConstants.HEADER;
+import static com.inferit.pmtool.security.SecurityConstants.JWT_PREFIX;
 
 
 public class JsonTokenFilter extends OncePerRequestFilter {

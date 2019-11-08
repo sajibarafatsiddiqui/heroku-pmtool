@@ -1,4 +1,4 @@
-package com.inferit.projectmanagementtool.domain;
+package com.inferit.pmtool.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;

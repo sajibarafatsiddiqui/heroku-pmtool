@@ -1,12 +1,12 @@
-package com.inferit.projectmanagementtool.services;
+package com.inferit.pmtool.services;
 
-import com.inferit.projectmanagementtool.domain.BackLog;
-import com.inferit.projectmanagementtool.domain.ProjectTasks;
-import com.inferit.projectmanagementtool.exceptions.ProjectNotFoundExcepion;
-import com.inferit.projectmanagementtool.exceptions.SequenceNotFoundException;
-import com.inferit.projectmanagementtool.repositories.BackLogRepositories;
-import com.inferit.projectmanagementtool.repositories.ProjectRepositories;
-import com.inferit.projectmanagementtool.repositories.ProjectTasksRepositories;
+import com.inferit.pmtool.domain.BackLog;
+import com.inferit.pmtool.domain.ProjectTasks;
+import com.inferit.pmtool.exceptions.ProjectNotFoundExcepion;
+import com.inferit.pmtool.exceptions.SequenceNotFoundException;
+import com.inferit.pmtool.repositories.BackLogRepositories;
+import com.inferit.pmtool.repositories.ProjectRepositories;
+import com.inferit.pmtool.repositories.ProjectTasksRepositories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

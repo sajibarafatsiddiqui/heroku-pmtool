@@ -1,4 +1,4 @@
-package com.inferit.projectmanagementtool.security;
+package com.inferit.pmtool.security;
 
 public class SecurityConstants {
     public static final String USER_URL="/api/user/**";

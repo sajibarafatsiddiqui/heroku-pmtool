@@ -1,6 +1,6 @@
-package com.inferit.projectmanagementtool.Validator;
+package com.inferit.pmtool.Validator;
 
-import com.inferit.projectmanagementtool.domain.User;
+import com.inferit.pmtool.domain.User;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;

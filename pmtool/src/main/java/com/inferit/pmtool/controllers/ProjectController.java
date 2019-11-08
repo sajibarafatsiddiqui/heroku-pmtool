@@ -1,9 +1,9 @@
-package com.inferit.projectmanagementtool.controllers;
+package com.inferit.pmtool.controllers;
 
-import com.inferit.projectmanagementtool.domain.Project;
-import com.inferit.projectmanagementtool.domain.ProjectTasks;
-import com.inferit.projectmanagementtool.services.ProjectService;
-import com.inferit.projectmanagementtool.services.ProjectTasksService;
+import com.inferit.pmtool.domain.Project;
+import com.inferit.pmtool.domain.ProjectTasks;
+import com.inferit.pmtool.services.ProjectService;
+import com.inferit.pmtool.services.ProjectTasksService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,6 +1,4 @@
-package com.inferit.projectmanagementtool.exceptions;
-import com.inferit.projectmanagementtool.exceptions.ProjectIdException;
-import com.inferit.projectmanagementtool.exceptions.ProjectIdExceptionResponse;
+package com.inferit.pmtool.exceptions;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

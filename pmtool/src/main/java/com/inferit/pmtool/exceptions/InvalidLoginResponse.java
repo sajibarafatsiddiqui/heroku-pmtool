@@ -1,4 +1,4 @@
-package com.inferit.projectmanagementtool.exceptions;
+package com.inferit.pmtool.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

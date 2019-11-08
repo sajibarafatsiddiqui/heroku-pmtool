@@ -1,7 +1,7 @@
-package com.inferit.projectmanagementtool.repositories;
+package com.inferit.pmtool.repositories;
 
 
-import com.inferit.projectmanagementtool.domain.ProjectTasks;
+import com.inferit.pmtool.domain.ProjectTasks;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

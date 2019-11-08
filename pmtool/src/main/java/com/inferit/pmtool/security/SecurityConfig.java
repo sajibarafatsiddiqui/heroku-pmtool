@@ -1,6 +1,6 @@
-package com.inferit.projectmanagementtool.security;
+package com.inferit.pmtool.security;
 
-import com.inferit.projectmanagementtool.services.CustomUserDetailsService;
+import com.inferit.pmtool.services.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -14,7 +14,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class
+SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private CustomUserDetailsService customUserDetailsService;
 
@@ -34,9 +35,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Autowired
-    JsonAuthenticationEntryPoint jsonAuthenticationEntryPoint;
+    com.inferit.pmtool.security.JsonAuthenticationEntryPoint jsonAuthenticationEntryPoint;
     @Bean
-    JsonTokenFilter jsonTokenFilter(){return new JsonTokenFilter();};
+    com.inferit.pmtool.security.JsonTokenFilter jsonTokenFilter(){return new com.inferit.pmtool.security.JsonTokenFilter();};
     @Override
     protected void configure(HttpSecurity http) throws Exception {
        http.cors().and().csrf().disable().exceptionHandling().authenticationEntryPoint(jsonAuthenticationEntryPoint).and()

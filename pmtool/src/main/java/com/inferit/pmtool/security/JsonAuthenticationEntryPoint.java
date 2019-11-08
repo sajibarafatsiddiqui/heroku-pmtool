@@ -1,7 +1,7 @@
-package com.inferit.projectmanagementtool.security;
+package com.inferit.pmtool.security;
 
 import com.google.gson.Gson;
-import com.inferit.projectmanagementtool.exceptions.InvalidLoginResponse;
+import com.inferit.pmtool.exceptions.InvalidLoginResponse;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;

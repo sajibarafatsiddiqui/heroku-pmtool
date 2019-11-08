@@ -1,11 +1,8 @@
-package com.inferit.projectmanagementtool.repositories;
+package com.inferit.pmtool.repositories;
 
-import com.inferit.projectmanagementtool.domain.BackLog;
-import com.inferit.projectmanagementtool.domain.Project;
+import com.inferit.pmtool.domain.BackLog;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-
-import java.util.Optional;
 
 @Repository
 public interface BackLogRepositories extends CrudRepository<BackLog,Long> {

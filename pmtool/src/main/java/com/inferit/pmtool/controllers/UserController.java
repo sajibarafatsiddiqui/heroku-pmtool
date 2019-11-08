@@ -1,11 +1,11 @@
-package com.inferit.projectmanagementtool.controllers;
+package com.inferit.pmtool.controllers;
 
-import com.inferit.projectmanagementtool.Validator.UserValidator;
-import com.inferit.projectmanagementtool.domain.User;
-import com.inferit.projectmanagementtool.payload.LoginRequest;
-import com.inferit.projectmanagementtool.payload.LoginSuccess;
-import com.inferit.projectmanagementtool.security.JsonTokenProvider;
-import com.inferit.projectmanagementtool.services.UserService;
+import com.inferit.pmtool.Validator.UserValidator;
+import com.inferit.pmtool.domain.User;
+import com.inferit.pmtool.payload.LoginRequest;
+import com.inferit.pmtool.payload.LoginSuccess;
+import com.inferit.pmtool.security.JsonTokenProvider;
+import com.inferit.pmtool.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.Map;
 
-import static com.inferit.projectmanagementtool.security.SecurityConstants.JWT_PREFIX;
+import static com.inferit.pmtool.security.SecurityConstants.JWT_PREFIX;
 
 @RestController
 @RequestMapping("api/users/")
