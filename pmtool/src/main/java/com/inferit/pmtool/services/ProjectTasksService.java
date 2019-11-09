@@ -18,10 +18,12 @@ public class ProjectTasksService {
     BackLogRepositories backLogRepositories;
     @Autowired
     ProjectRepositories projectRepositories;
+    @Autowired
+    ProjectService projectService;
 
-    public ProjectTasks addProjectTask(String projectIdentifier, ProjectTasks projectTasks) {
+    public ProjectTasks addProjectTask(String projectIdentifier, ProjectTasks projectTasks, String userName) {
         try {
-            BackLog backLog = backLogRepositories.findByProjectIdentifier(projectIdentifier);
+            BackLog backLog = projectService.findByProjectIdentifier(projectIdentifier,userName).getBacklog();
 
             Integer backLogSequence = backLog.getProjectSequence();
             backLogSequence++;
@@ -35,9 +37,9 @@ public class ProjectTasksService {
         }
     }
 
-    public Iterable<ProjectTasks> findByProjectIdentifier(String projectIdentifier) {
+    public Iterable<ProjectTasks> findByProjectIdentifier(String projectIdentifier, String userName) {
 
-        if (projectRepositories.findByProjectIdentifier(projectIdentifier) != null) {
+        if (projectService.findByProjectIdentifier(projectIdentifier,userName) != null) {
             return projectTasksRepositories.findByProjectIdentifier(projectIdentifier);
         } else {
             throw new ProjectNotFoundExcepion("Project with ID " + projectIdentifier + "doesn't exist");
@@ -45,8 +47,8 @@ public class ProjectTasksService {
 
     }
 
-    public ProjectTasks findByProjectSequence(String projectIdentifier, String projectSequence) {
-        BackLog backLog = backLogRepositories.findByProjectIdentifier(projectIdentifier);
+    public ProjectTasks findByProjectSequence(String projectIdentifier, String projectSequence, String userName) {
+        BackLog backLog = projectService.findByProjectIdentifier(projectIdentifier,userName).getBacklog();
         if (backLog == null) {
             throw new ProjectNotFoundExcepion("Project with ID " + projectIdentifier + " doesn't exist");
         }
@@ -64,9 +66,9 @@ public class ProjectTasksService {
     }
 
     public ProjectTasks updateProjectTaskByProjectSequence(ProjectTasks updatedTask, String projectIdentifier,
-                                                           String projectSequence) {
+                                                           String projectSequence,String userName) {
 
-        ProjectTasks projectTasks = findByProjectSequence(projectIdentifier, projectSequence);
+        ProjectTasks projectTasks = findByProjectSequence(projectIdentifier, projectSequence,userName);
         projectTasks = updatedTask;
 
         return projectTasksRepositories.save(projectTasks);
@@ -74,8 +76,8 @@ public class ProjectTasksService {
     }
 
 
-    public void deleteTask(String projectIdentifier, String projectSequence) {
-        ProjectTasks projectTask=findByProjectSequence(projectIdentifier,projectSequence);
+    public void deleteTask(String projectIdentifier, String projectSequence,String userName) {
+        ProjectTasks projectTask=findByProjectSequence(projectIdentifier,projectSequence,userName);
         projectTasksRepositories.delete(projectTask);
 
     }

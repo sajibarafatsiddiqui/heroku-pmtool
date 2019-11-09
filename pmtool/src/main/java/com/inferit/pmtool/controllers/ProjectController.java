@@ -65,48 +65,49 @@ public class ProjectController {
     }
 
     @PostMapping("/{projectIdentifier}")
-    public ResponseEntity<?> addProjectTask(@Valid @RequestBody ProjectTasks projectTasks, BindingResult result,@PathVariable String projectIdentifier){
+    public ResponseEntity<?> addProjectTask(@Valid @RequestBody ProjectTasks projectTasks, BindingResult result,@PathVariable String projectIdentifier
+    ,Principal principal){
        projectIdentifier.toUpperCase();
        Map<String,String> errorMap =projectService.errorMap(result);
 
             if (errorMap != null) return new ResponseEntity<Map<String, String>>(errorMap, HttpStatus.BAD_REQUEST);
-            projectTasksService.addProjectTask(projectIdentifier, projectTasks);
+            projectTasksService.addProjectTask(projectIdentifier, projectTasks,principal.getName());
             return new ResponseEntity<ProjectTasks>(projectTasks, HttpStatus.CREATED);
 
 
     }
 
     @GetMapping("/backlog/{projectIdentifier}")
-    public Iterable<ProjectTasks> getProjectTasks(@PathVariable String projectIdentifier) {
+    public Iterable<ProjectTasks> getProjectTasks(@PathVariable String projectIdentifier,Principal principal) {
 
 
-            return projectTasksService.findByProjectIdentifier(projectIdentifier);
+            return projectTasksService.findByProjectIdentifier(projectIdentifier,principal.getName());
 
     }
     @GetMapping("/backlog/{projectIdentifier}/{projectSequence}")
-    public ProjectTasks getProjectTasks(@PathVariable String projectIdentifier, @PathVariable String projectSequence) {
+    public ProjectTasks getProjectTasks(@PathVariable String projectIdentifier, @PathVariable String projectSequence,Principal principal) {
 
 
-        return projectTasksService.findByProjectSequence(projectIdentifier,projectSequence);
+        return projectTasksService.findByProjectSequence(projectIdentifier,projectSequence,principal.getName());
 
     }
     @PatchMapping("/backlog/{projectIdentifier}/{projectSequence}")
     public ResponseEntity<?>updateProjectTask(@Valid @RequestBody ProjectTasks updatedTasks,
                                               @PathVariable String projectIdentifier,@PathVariable String projectSequence,
-                                              BindingResult result){
+                                              BindingResult result,Principal principal ){
         Map<String,String>errorMap=projectService.errorMap(result);
         if(errorMap!=null){
             return new ResponseEntity<Map<String,String>>(errorMap,HttpStatus.BAD_REQUEST);
         }
 
-          ProjectTasks projectTasks=projectTasksService.updateProjectTaskByProjectSequence(updatedTasks,projectIdentifier,projectSequence);
+          ProjectTasks projectTasks=projectTasksService.updateProjectTaskByProjectSequence(updatedTasks,projectIdentifier,projectSequence,principal.getName());
             return new ResponseEntity<ProjectTasks>(projectTasks,HttpStatus.CREATED);
 
 
     }
     @DeleteMapping("/backlog/{projectIdentifier}/{projectSequence}")
-    public ResponseEntity<?>deleteTask(@PathVariable String projectIdentifier,@PathVariable String projectSequence){
-       projectTasksService.deleteTask(projectIdentifier,projectSequence);
+    public ResponseEntity<?>deleteTask(@PathVariable String projectIdentifier,@PathVariable String projectSequence,Principal principal){
+       projectTasksService.deleteTask(projectIdentifier,projectSequence,principal.getName());
        return new ResponseEntity<String>("Project has been deleted",HttpStatus.OK);
     }
 }
