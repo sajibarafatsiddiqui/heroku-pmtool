@@ -1,14 +1,9 @@
 package com.inferit.pmtool.exceptions;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Bean;
 
 
-@Data()
-
+@Data
 public class InvalidLoginResponse {
     private String userName;
     private String password="Invalid Password";
